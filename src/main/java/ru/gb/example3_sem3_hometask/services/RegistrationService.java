@@ -26,8 +26,8 @@ public class RegistrationService {
  */
     //Метод processRegistration
     public void processRegistration(String name, int age, String email){
-        User user = new User(name, age, email);
-        dataProcessingService.getRepository().getUsers().add(user);
+        User user = userService.createUser(name,age,email);
+        dataProcessingService.getRepository().save(user);
         notificationService.notifyUser(user);
     }
 }

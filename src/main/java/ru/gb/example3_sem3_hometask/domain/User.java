@@ -1,23 +1,29 @@
 package ru.gb.example3_sem3_hometask.domain;
 
 public class User {
-
+    private int id;
     private String name;
     private int age;
     private String email;
 
-    public User(String name, int age, String email){
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
-    public User(){
-        this.name = "";
-        this.age = 0;
-        this.email = "";
+//    public User(String name, int age, String email){
+//        this.name = name;
+//        this.age = age;
+//        this.email = email;
+//    }
+//    public User(){
+//        this.name = "";
+//        this.age = 0;
+//        this.email = "";
+//    }
+
+    public int getId() {
+        return id;
     }
 
-
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

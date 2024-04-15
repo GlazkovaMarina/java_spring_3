@@ -21,7 +21,8 @@ public class UserController {
 
     @PostMapping("/body")
     public String userAddFromBody(@RequestBody User user) {
-        service.getDataProcessingService().getRepository().getUsers().add(user);
+        //service.getDataProcessingService().getRepository().getUsers().add(user);
+        service.getDataProcessingService().getRepository().save(user);
         return "User added from body!";
     }
 
@@ -37,9 +38,5 @@ public class UserController {
         service.processRegistration(name, age, email);
         return "User added from param!";
     }
-    /*
-
-2) Перенести репозиторий проекта с List<User> на базу данных H2
- */
 
 }

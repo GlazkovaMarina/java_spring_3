@@ -19,9 +19,9 @@ public class DataProcessingService {
         return repository;
     }
 
-    public void  addUserToList(User user)
+    public void addUserToList(User user)
     {
-        repository.getUsers().add(user);
+        repository.save(user);
     }
 
     public List<User> sortUsersByAge(List<User> users) {
