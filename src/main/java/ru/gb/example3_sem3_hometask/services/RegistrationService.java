@@ -18,12 +18,6 @@ public class RegistrationService {
     @Autowired
     private NotificationService notificationService;
 
-/*
-2) Разработать метод processRegistration в котором:
-- создается пользователь из параметров метода
-- созданный пользователь добавляется в репозиторий
-- через notificationService выводится сообщение в консоль
- */
     //Метод processRegistration
     public void processRegistration(String name, int age, String email){
         User user = userService.createUser(name,age,email);
