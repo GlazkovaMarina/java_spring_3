@@ -6,7 +6,9 @@ public class User {
     private int age;
     private String email;
 
-
+    public int getId() {
+        return id;
+    }
     public void setId(int id) {
         this.id = id;
     }
