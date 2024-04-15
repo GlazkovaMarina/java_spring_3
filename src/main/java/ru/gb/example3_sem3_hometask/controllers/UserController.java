@@ -20,15 +20,26 @@ public class UserController {
     }
 
     @PostMapping("/body")
-    public String userAddFromBody(@RequestBody User user)
-    {
+    public String userAddFromBody(@RequestBody User user) {
         service.getDataProcessingService().getRepository().getUsers().add(user);
         return "User added from body!";
     }
+
     @PostMapping("/formdata")
-    public String userAddFromFormData(@RequestParam String name, @RequestParam int age, @RequestParam String email)
-    {
+    public String userAddFromFormData(@RequestParam String name, @RequestParam int age, @RequestParam String email) {
         service.processRegistration(name, age, email);
         return "User added from form-data!";
     }
+
+    @PostMapping("/param/{name}/{age}/{email}")
+    public String userAddFromParam(@PathVariable(value = "name", required = true) String name, @PathVariable(value = "age", required = true) int age, @PathVariable(value = "email", required = true) String email)
+    {
+        service.processRegistration(name, age, email);
+        return "User added from param!";
+    }
+    /*
+
+2) Перенести репозиторий проекта с List<User> на базу данных H2
+ */
+
 }
